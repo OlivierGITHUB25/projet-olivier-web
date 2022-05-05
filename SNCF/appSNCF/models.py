@@ -1,6 +1,6 @@
 from django.db import models
 
-class Livre(models.Model):
+class train(models.Model):
     modele = models.CharField(max_length=100)
     marque = models.CharField(max_length = 100)
     date_sortie = models.DateField(blank=True, null = True)

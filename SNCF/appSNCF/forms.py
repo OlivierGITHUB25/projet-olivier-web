@@ -2,9 +2,9 @@ from django.forms import ModelForm
 from django.utils.translation import gettext_lazy as _
 from . import models
 
-class LivreForm(ModelForm):
+class trainForm(ModelForm):
     class Meta:
-        model = models.Livre
+        model = models.train
         fields = ('modele', 'marque', 'date_sortie', 'nombre_en_stock','resume')
         labels = {
             'modele' : _('Modele'),
