@@ -1,20 +1,19 @@
 from django.shortcuts import render
 from .forms import trainForm
 from . import models
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 
 def index(request):
     return render(request, 'sncf/index.html')
 
-
-
 def ajout(request):
     if request.method == "POST":
         form = trainForm(request)
         if form.is_valid(): # validation du formulaire.
             train = form.save() # sauvegarde dans la base
-            return render(request,"/SNCF/affiche.html",{"train" : train})
+            return render(request,"sncf/affiche.html",{"train" : train})
         else:
             return render(request,"sncf/ajout.html",{"form": form})
     else :
@@ -22,10 +21,25 @@ def ajout(request):
         return render(request,"sncf/ajout.html",{"form" : form})
 
 def traitement(request):
-    lform = trainForm(request.POST)
-    if lform.is_valid():
-        train = lform.save()
-        return render(request,"/sncf/affiche.html",{"train" : train})
+    Tform = trainForm(request.POST)
+    if Tform.is_valid():
+        train = Tform.save()
+        return render(request,"sncf/affiche.html",{"train" : train})
     else:
-        return render(request,"sncf/ajout.html",{"form": lform})
+        return render(request,"sncf/ajout.html",{"form": Tform})
+
+def affiche(request, id):
+    train = models.train.objects.get(pk=id)
+    return render(request, "sncf/affiche.html", {"train": train})
+
+def traitementupdate(request, id):
+    Tform = trainForm(request.POST)
+    if Tform.is_valid():
+        train = Tform.save(commit=False)
+        train.id = id
+        train.save()
+        return HttpResponseRedirect("/sncf/")
+    else:
+        return render(request, "sncf/update.html", {"form": Tform, "id": id})
+
 
