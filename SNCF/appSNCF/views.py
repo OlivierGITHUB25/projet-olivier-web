@@ -42,4 +42,9 @@ def traitementupdate(request, id):
     else:
         return render(request, "sncf/update.html", {"form": Tform, "id": id})
 
+def listTOTALtrain(request):
+    liste = models.train.objects.all()
+    return render(request, "sncf/stock.html", {"liste": liste})
+
+
 

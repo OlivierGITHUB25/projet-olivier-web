@@ -7,5 +7,5 @@ class train(models.Model):
     nombre_en_stock= models.IntegerField(blank=False)
     resume = models.TextField(null = True, blank = True) # champs de type text long
     def __str__(self):
-            chaine = f"{self.modele}fabriqué par{self.marque}sortie le{self.date_sortie}"
+            chaine = f"{self.modele} fabriqué par {self.marque} sortie le {self.date_sortie}"
             return chaine

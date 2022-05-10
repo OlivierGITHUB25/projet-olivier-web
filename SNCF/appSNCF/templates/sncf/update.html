@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>update</title>
-</head>
-<body>
+{% extends "sncf/index.html" %}
+{%block title%}update-sncf{%endblock%}
+{% block content %}
     <form method="post" action="/appSNCF/traitementupdate/{{train.id}}">
         {% csrf_token %}
         {{ form.as_ul }}
         <input type="submit" value="envoyer␣les␣données"\>
     </form>
-</body>
-</html>
+{% endblock %}

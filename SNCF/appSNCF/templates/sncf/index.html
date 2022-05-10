@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>index</title>
+    {% load static %}
+	<meta charset="utf-8">
+	<title> {%block title %} index-sncf {% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="{%static 'appSNCF/style.css'%}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>hello les gens</h1>
+	<header>
+		<div id="1">
+			<img src="{%static 'appSNCF/logo.png'%}" alt="logo de la sncf">
+		</div>
+		<div id="1">
+			<h1>stock de la sncf</h1>
+		</div>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="/appSNCF/index/">accueil</a></li>
+			<li><a href="/appSNCF/ajout/">ajout</a></li>
+			<li><a href="/appSNCF/update/">update</a></li>
+			<li><a href="/appSNCF/stock/">stock</a></li>
+		</ul>
+	</nav>
+	{% block content %}<section> </section>{% endblock %}
 </body>
 </html>

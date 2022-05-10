@@ -7,4 +7,5 @@ urlpatterns = [
     path('traitement/', views.traitement),
     path('affiche/<int:id>/',views.affiche),
     path('update/<int:id>/',views.traitementupdate),
+    path('stock/', views.listTOTALtrain),
 ]

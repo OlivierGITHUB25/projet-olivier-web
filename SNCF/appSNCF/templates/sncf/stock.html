@@ -1,0 +1,13 @@
+{% extends "sncf/index.html" %}
+{%block title%}stock-sncf{%endblock%}
+{% block content %}
+<h2>liste des train</h2>
+    <ul>
+        {% for l in liste %}
+        <li>
+            {{l}}
+            <a href="/appSNCF/update/{{l.id}}/" class="modifier">modifier</a>
+        </li>
+        {%endfor%}
+    </ul>
+{% endblock %}
