@@ -37,13 +37,15 @@ nav a:hover{
 	border-bottom:2px solid #A1006B;
 }
 h1{
-	text-align: center;
+	margin-left: 10em;
 	font-size: 3em;
 }
 
 header{
 	display: flex;
+	border-bottom:2px solid lightgrey;
 }
 img{
-	
+ 	width: 40%;
+ 	height: auto;
 }
