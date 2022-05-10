@@ -11,8 +11,8 @@
         {% for l in listeMarque %}
         <li>
             {{l}}
-            <a href="/appSNCF/update/{{M.id}}/" class="modifier">modifier</a>
-            <a href="/appSNCF/suprTrain/{{M.id}}" class="suprimer">suprimer</a>
+            <a href="/appSNCF/update/{{l.id}}/" class="modifier">modifier</a>
+            <a href="/appSNCF/suprTrain/{{l.id}}" class="suprimer">suprimer</a>
         </li>
         {%endfor%}
     </ul>

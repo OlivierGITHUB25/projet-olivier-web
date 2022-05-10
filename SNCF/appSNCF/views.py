@@ -59,18 +59,8 @@ def traitementMarque(request):
         return render(request,"sncf/ajout-marque.html",{"form": Mform})
 
 def ajoutMarque(request):
-    if request.method == "POST":
-        form = marqueForm(request)
-        if form.is_valid(): # validation du formulaire.
-            marque = form.save() # sauvegarde dans la base
-            return render(request,"sncf/affiche-marque.html",{"marque" : marque})
-        else:
-            return render(request,"sncf/ajout-marque.html",{"form": form})
-    else :
-        form = marqueForm() # création d'un formulaire vide
-        return render(request,"sncf/ajout-marque.html",{"form" : form})
-def listeMarque(request):
+    form = marqueForm() # création d'un formulaire vide
     listeMarque = models.marque.objects.all()
-    return render(request, "sncf/ajout-marque.html", {"liste": listeMarque})
+    return render(request,"sncf/ajout-marque.html",{"form" : form, "listeMarque": listeMarque})
 
 
