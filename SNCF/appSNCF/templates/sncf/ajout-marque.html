@@ -6,4 +6,14 @@
         {{ form.as_ul }} <!-- permet d'afficher tous les champs sous forme d'une liste-->
         <input type="submit" value="envoyer"\>
     </form>
+    <h2>liste des marque</h2>
+     <ul>
+        {% for l in listeMarque %}
+        <li>
+            {{l}}
+            <a href="/appSNCF/update/{{M.id}}/" class="modifier">modifier</a>
+            <a href="/appSNCF/suprTrain/{{M.id}}" class="suprimer">suprimer</a>
+        </li>
+        {%endfor%}
+    </ul>
 {% endblock %}

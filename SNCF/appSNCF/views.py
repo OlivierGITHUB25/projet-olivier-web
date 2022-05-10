@@ -69,5 +69,8 @@ def ajoutMarque(request):
     else :
         form = marqueForm() # création d'un formulaire vide
         return render(request,"sncf/ajout-marque.html",{"form" : form})
+def listeMarque(request):
+    listeMarque = models.marque.objects.all()
+    return render(request, "sncf/ajout-marque.html", {"liste": listeMarque})
 
 
