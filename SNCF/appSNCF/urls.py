@@ -8,4 +8,7 @@ urlpatterns = [
     path('affiche/<int:id>/',views.affiche),
     path('update/<int:id>/',views.traitementupdate),
     path('stock/', views.listTOTALtrain),
+    path('suprTrain/<int:id>/', views.deleteTrain),
+    path('traitementMarque/', views.traitementMarque),
+    path('ajoutMarque/', views.ajoutMarque),
 ]

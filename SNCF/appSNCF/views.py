@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import trainForm
+from .forms import trainForm, marqueForm
 from . import models
 from django.http import HttpResponseRedirect
 
@@ -45,6 +45,29 @@ def traitementupdate(request, id):
 def listTOTALtrain(request):
     liste = models.train.objects.all()
     return render(request, "sncf/stock.html", {"liste": liste})
+def deleteTrain(request, id):
+    train = models.train.objects.get(pk=id)
+    train.delete()
+    return HttpResponseRedirect ("/appSNCF/stock/")
 
+def traitementMarque(request):
+    Mform = marqueForm(request.POST)
+    if Mform.is_valid():
+        marque = Mform.save()
+        return render(request,"sncf/affiche-marque.html",{"marque" : marque})
+    else:
+        return render(request,"sncf/ajout-marque.html",{"form": Mform})
+
+def ajoutMarque(request):
+    if request.method == "POST":
+        form = marqueForm(request)
+        if form.is_valid(): # validation du formulaire.
+            marque = form.save() # sauvegarde dans la base
+            return render(request,"sncf/affiche-marque.html",{"marque" : marque})
+        else:
+            return render(request,"sncf/ajout-marque.html",{"form": form})
+    else :
+        form = marqueForm() # création d'un formulaire vide
+        return render(request,"sncf/ajout-marque.html",{"form" : form})
 
 

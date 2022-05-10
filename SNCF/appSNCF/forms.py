@@ -2,6 +2,7 @@ from django.forms import ModelForm
 from django.utils.translation import gettext_lazy as _
 from . import models
 
+
 class trainForm(ModelForm):
     class Meta:
         model = models.train
@@ -12,4 +13,13 @@ class trainForm(ModelForm):
             'date_sortie' : _('date_sortie'),
             'nombre_en_stock' : _('Nombre_en_stock'),
             'resume' : _('Résumé')
+        }
+
+
+class marqueForm(ModelForm):
+    class Meta:
+        model = models.marque
+        fields = ('marque',)
+        labels = {
+            'marque': _('Marque'),
         }
