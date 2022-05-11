@@ -72,5 +72,9 @@ def traitementupdatemarque(request, id):
         return HttpResponseRedirect("/sncf/")
     else:
         return render(request, "sncf/update-marque.html", {"form": Mform, "id": id})
+def deleteMarque(request, id):
+    marque = models.marque.objects.get(pk=id)
+    marque.delete()
+    return HttpResponseRedirect ("/appSNCF/ajoutMarque/")
 
 

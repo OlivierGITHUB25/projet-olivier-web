@@ -12,5 +12,5 @@ urlpatterns = [
     path('traitementMarque/', views.traitementMarque),
     path('ajoutMarque/', views.ajoutMarque),
     path('updateMarque/<int:id>/', views.traitementupdatemarque),
-
+    path('suprMarque/<int:id>/', views.deleteMarque),
 ]
