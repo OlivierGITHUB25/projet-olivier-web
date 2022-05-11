@@ -63,4 +63,14 @@ def ajoutMarque(request):
     listeMarque = models.marque.objects.all()
     return render(request,"sncf/ajout-marque.html",{"form" : form, "listeMarque": listeMarque})
 
+def traitementupdatemarque(request, id):
+    Mform = marqueForm(request.POST)
+    if Mform.is_valid():
+        marque = Mform.save(commit=False)
+        marque.id = id
+        marque.save()
+        return HttpResponseRedirect("/sncf/")
+    else:
+        return render(request, "sncf/update-marque.html", {"form": Mform, "id": id})
+
 
