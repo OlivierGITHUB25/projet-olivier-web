@@ -55,10 +55,14 @@ img{
     width:10%;
     margin-left:40%;
     margin-right:46.5%;
-    background-color: darkred;
 }
 #photo{
     width:3%;
     height:auto;
     margin:0.2%;
+}
+.stock{
+    display: flex;
+    margin 10%;
+    flex-direction: column;
 }
