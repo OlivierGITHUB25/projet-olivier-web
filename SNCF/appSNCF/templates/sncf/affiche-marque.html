@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>ajout d'une marque</title>
-</head>
-<body>
-  <p> vous avez ajouté la marque suivant {{marque}}  {{marque.id}} </p>
-</body>
-</html>
+{% extends "sncf/index.html" %}
+{%block title%}affiche-marque{%endblock%}
+{% block content %}
+  <p> vous avez ajouté la marque suivant {{marque}} </p>
+{% endblock %}

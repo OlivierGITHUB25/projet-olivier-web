@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>ajout d'un train</title>
-</head>
-<body>
-  <p> vous avez ajouté le train suivant {{train}}  {{train.id}} </p>
-</body>
-</html>
+{% extends "sncf/index.html" %}
+{%block title%}affiche-marque{%endblock%}
+{% block content %}
+   <p> vous avez ajouté le train suivant {{train}}  {{train.id}} </p>
+{% endblock %}

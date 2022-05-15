@@ -45,6 +45,7 @@ def traitementupdate(request, id):
 def listTOTALtrain(request):
     liste = models.train.objects.all()
     return render(request, "sncf/stock.html", {"liste": liste})
+
 def deleteTrain(request, id):
     train = models.train.objects.get(pk=id)
     train.delete()
@@ -72,6 +73,7 @@ def traitementupdatemarque(request, id):
         return HttpResponseRedirect("/sncf/")
     else:
         return render(request, "sncf/update-marque.html", {"form": Mform, "id": id})
+
 def deleteMarque(request, id):
     marque = models.marque.objects.get(pk=id)
     marque.delete()
