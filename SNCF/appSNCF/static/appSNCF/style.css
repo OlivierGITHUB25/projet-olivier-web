@@ -63,6 +63,9 @@ img{
 }
 .stock{
     display: flex;
-    margin 10%;
-    flex-direction: column;
+	flex-basis: 20%;
+	margin-top: 5%;
+	margin-left: 10%;
+	margin-right: 10%;
+	flex-wrap: wrap;
 }
