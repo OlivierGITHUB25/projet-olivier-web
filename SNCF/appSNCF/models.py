@@ -19,7 +19,7 @@ class marque(models.Model):
     marque = models.CharField(max_length = 100)
 
     def __str__(self):
-        chaine = f"{self.marque}"
-        return chaine
+        return f"{self.marque}"
+
     def dico(self):
         return {"marque": self.marque}

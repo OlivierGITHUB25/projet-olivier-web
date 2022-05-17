@@ -25,6 +25,7 @@ nav ul::after{
 	content: "";
 	display: table;
 	clear: both;
+	margin-bottom:1%;
 }
 nav a{
 	display: block;
@@ -70,4 +71,21 @@ img{
 }
 .liste{
    list-style: none;
+   margin-left:1%;
+}
+h2{
+    margin-left:1%;
+}
+label {
+    margin-left:1%;
+}
+input{
+    margin-left:1%;
+}
+#text{
+    margin-left:1%;
+
+}
+li input{
+    width:20%
 }

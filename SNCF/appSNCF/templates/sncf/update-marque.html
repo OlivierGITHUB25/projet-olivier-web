@@ -1,7 +1,7 @@
 {% extends "sncf/index.html" %}
 {%block title%}update-sncf{%endblock%}
 {% block content %}
-    <form method="post" action="/appSNCF/traitementupdatemarque/{{marque.id}}">
+    <form method="post" action="/appSNCF/traitementupdatemarque/{{id}}/">
         {% csrf_token %}
         {{ form.as_ul }}
         <input type="submit" value="envoyer les données"\>

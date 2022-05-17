@@ -38,7 +38,7 @@ def traitementupdate(request, id):
         train = Tform.save(commit=False)
         train.id = id
         train.save()
-        return HttpResponseRedirect("/sncf/")
+        return HttpResponseRedirect("/appSNCF/stock/")
     else:
         return render(request, "sncf/update.html", {"form": Tform, "id": id})
 
@@ -70,7 +70,7 @@ def traitementupdatemarque(request, id):
         marque = Mform.save(commit=False)
         marque.id = id
         marque.save()
-        return HttpResponseRedirect("/sncf/")
+        return HttpResponseRedirect("/appSNCF/ajoutMarque/")
     else:
         return render(request, "sncf/update-marque.html", {"form": Mform, "id": id})
 
@@ -78,5 +78,15 @@ def deleteMarque(request, id):
     marque = models.marque.objects.get(pk=id)
     marque.delete()
     return HttpResponseRedirect ("/appSNCF/ajoutMarque/")
+
+def update_train(request, id):
+    train = models.train.objects.get(pk=id)
+    Tform = trainForm(train.dico())
+    return render(request, "sncf/update.html/", {"form": Tform, "id": id})
+
+def update_marque(request, id):
+    marque = models.marque.objects.get(pk=id)
+    Mform = marqueForm(marque.dico())
+    return render(request, "sncf/update-marque.html/", {"form": Mform, "id": id})
 
 
